@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<h2 class="text-center mb-4">Your Bookings</h2>
+<ul class="list-group shadow">
+    {% for booking in bookings %}
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        {{ booking.event.name }}
+        <span class="badge bg-primary rounded-pill">{{ booking.date_booked|date:"M d, Y" }}</span>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
