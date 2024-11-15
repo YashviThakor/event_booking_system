@@ -9,7 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Security settings
 SECRET_KEY = 'your-secret-key-here'
 DEBUG = True
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['event-booking-system-n4yt.onrender.com']
 
 # Application definition
 INSTALLED_APPS = [
