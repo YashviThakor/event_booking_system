@@ -1,16 +1,25 @@
 {% extends 'base.html' %}
-{% load static %}
-{% block title %}Event Details{% endblock %}
+{% load static %} 
+{% block title %}Event Detail{% endblock %}
 
 {% block content %}
-<div class="row">
-    <div class="col-md-8 mx-auto">
-        <div class="card">
-            <img src="{% static 'images/concert.jpg' %}" class="card-img-top" alt="{{ event.name }}">
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow-sm">
+            <img src="{{ event.images.url }}" class="card-img-top" alt="{{ event.title }}">
             <div class="card-body">
-                <h5 class="card-title">{{ event.name }}</h5>
+                <h3 class="card-title">{{ event.title }}</h3>
                 <p class="card-text">{{ event.description }}</p>
-                <a href="{% url 'book_ticket' event.pk %}" class="btn btn-success">Book Ticket</a>
+                <p><strong>Date:</strong> {{ event.date }}</p>
+                <p><strong>Location:</strong> {{ event.location }}</p>
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="num_tickets" class="form-label">Number of Tickets</label>
+                        <input type="number" class="form-control" id="num_tickets" name="num_tickets" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Book Now</button>
+                </form>
             </div>
         </div>
     </div>

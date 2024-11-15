@@ -1,12 +1,19 @@
-.card img {
-    max-height: 200px;
-    object-fit: cover;
+/* style.css */
+body {
+    background-color: #f4f6f9;
+    font-family: 'Arial', sans-serif;
 }
 
 .navbar {
     margin-bottom: 20px;
 }
 
-.container {
-    max-width: 960px;
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+footer {
+    background-color: #f8f9fa;
+    font-size: 14px;
 }
